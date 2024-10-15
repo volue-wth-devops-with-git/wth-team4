@@ -1,5 +1,16 @@
 on: 
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'What environment do you want to deploy to?'
+        default: 'dev'
+        required: false
+        type: choice
+        options:
+        - dev
+        - test
+        - prod
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -12,4 +23,4 @@ jobs:
       with:
         resourceGroupName: ${{ vars.RESOURCEGROUP }}
         template: InfrastructureAsCode/main.bicep
-        parameters: environment=prod
+        parameters: environment=${{ inputs.environment }}
