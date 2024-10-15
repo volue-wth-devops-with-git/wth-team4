@@ -11,5 +11,6 @@
 		"vscode": {
 			"extensions": ["github.copilot"]
 		}
-	}
+	},
+	"postCreateCommand": "dotnet restore Application/src/RazorPagesTestSample/RazorPagesTestSample.sln"
 }
