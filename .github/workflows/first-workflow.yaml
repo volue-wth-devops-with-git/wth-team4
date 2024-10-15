@@ -1,3 +1,5 @@
+on: 
+- workflow_dispatch
 jobs:
   Team4-has-made-a-first-attempt:
     runs-on: ubuntu-latest
