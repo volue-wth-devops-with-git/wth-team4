@@ -12,4 +12,4 @@ jobs:
       with:
         resourceGroupName: ${{ vars.RESOURCEGROUP }}
         template: InfrastructureAsCode/main.bicep
-        parameters: environment=test
+        parameters: environment=prod
