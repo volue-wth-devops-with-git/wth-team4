@@ -1,0 +1,6 @@
+jobs:
+  Team4-has-made-a-first-attempt:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Hello world"
+    - run: echo "Step 2"
