@@ -8,6 +8,7 @@ jobs:
     - run: echo "Step 2"
   Team4-has-discovered-marketplace:
     runs-on: ubuntu-latest
+    needs: Team4-has-made-a-first-attempt
     steps:
     - uses: mscoutermarsh/cowsays-action@master
       with:
