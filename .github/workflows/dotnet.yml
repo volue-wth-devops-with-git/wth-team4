@@ -17,10 +17,10 @@ on:
     paths: 
     - Application/**
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -46,3 +46,15 @@ jobs:
         run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
       - name: Docker push
         run: docker push $registryName/$repositoryName:$tag
+
+  deployStuff:
+    runs-on: ubuntu-latest
+    needs: secondJob
+    steps:
+    - uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURETEAM4 }}
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: 5iizuy4lex6h2-dev
+        images: $registryName/$repositoryName:$tag
