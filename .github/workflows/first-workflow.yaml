@@ -6,3 +6,10 @@ jobs:
     steps:
     - run: echo "Hello world"
     - run: echo "Step 2"
+  Team4-has-discovered-marketplace:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: mscoutermarsh/cowsays-action@master
+      with:
+        text: 'Group 4 rocks!'
+        color: 'red'
