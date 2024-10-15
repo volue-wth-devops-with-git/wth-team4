@@ -1,5 +1,8 @@
 on: 
-- workflow_dispatch
+  workflow_dispatch:
+  issues:
+    types:
+    - opened
 jobs:
   Team4-has-made-a-first-attempt:
     runs-on: ubuntu-latest
